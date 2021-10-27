@@ -1,0 +1,503 @@
+body {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+
+    /* FUENTES */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}
+
+#header {
+    height: 120px;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    border-top: 5px solid #61dafb;
+}
+
+.center {
+    width: 75%;
+    margin: 0px auto;
+}
+
+/* LIMPIAR FLOTADOS para que ningun elemento invada la navbar ya que tiene propiedades float */
+.clearfix {
+    clear: both;
+    float: none;
+}
+
+#logo {
+    /* Esta se complementa con #menu width: 70% y hacen el 100% */
+    width: 30%;
+    font-size: 30px;
+    float: left;
+    margin-top: 35px;
+}
+
+#logo img {
+    display: block;
+    float: left;
+    height: 60px;
+    margin-top: -9px;
+    /* Esto esta relacionado con @keyframes girar { */
+    animation: girar infinite 30s linear;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#brand {
+    display: block;
+    margin: 0px;
+    float: left;
+}
+
+#menu {
+    /* Esta se complementa con #logo width: 30% y hacen el 100% */
+    width: 70%;
+    float: right;
+    font-size: 18px;
+}
+
+#menu ul {
+    line-height: 85px;
+    width: 60%;
+    float: right;
+}
+
+#menu ul li {
+    /* Los puntitos de lista quitalos · */
+    list-style: none;
+    height: 46px;
+    /* Hace que los elementos de la navbar se alineen , tambien se puede hacer con float: right; cada elemento de la <li> */
+    display: inline-block;
+    /* Separame los elementos de la lista entre si */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #444;
+    transition: 300ms all;
+}
+
+#menu a:hover {
+    /* Al pasar con raton cambia el color a los textos en la navbar */
+    color: #40c0e4;
+}
+
+#slider {
+    width: 100%;
+    background: #40c0e4;
+    height: 350px;
+    /* line-height: 320px; */
+    color: white;
+    text-shadow: 0px 0px 5px #444;
+
+    /* DEGRADADO CSS  */
+    background: rgba(73, 155, 234, 1);
+    background: -moz-linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(25, 211, 224, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73, 155, 234, 1)), color-stop(100%, rgba(25, 211, 224, 1)));
+    background: -webkit-linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(25, 211, 224, 1) 100%);
+    background: -o-linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(25, 211, 224, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(25, 211, 224, 1) 100%);
+    background: linear-gradient(to right, rgba(73, 155, 234, 1) 0%, rgba(25, 211, 224, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#19d3e0', GradientType=1);
+}
+
+#slider h1 {
+    margin-top: 0px;
+    padding: 0px;
+    padding-top: 130px;
+    text-align: center;
+}
+
+.btn-white {
+    display: block;
+    background: white;
+    color: rgb(88, 88, 88);
+    padding: 10px;
+    width: 100px;
+    height: 35px;
+    margin: 0px auto;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-shadow: none;
+    text-decoration: none;
+    line-height: 35px;
+    box-shadow: 0px 0px 5px rgb(88, 88, 88);
+    margin-top: 40px;
+    border-radius: 5px;
+    /* Esto esta relacionado con .btn-white:hover */
+    transition: 300ms all;
+}
+
+.btn-white:hover {
+    background: #444;
+    color: white;
+}
+
+#content {
+    width: 70%;
+    float: left;
+
+    /* Altura minima de Ultimos articulos para que footer quede mas alejado del centro */
+    min-height: 650px;
+    margin-right: 20px;
+}
+
+#sidebar {
+    width: 25%;
+    float: left;
+
+}
+
+.sidebar-item {
+    background: #f7f7f7;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.sidebar-item h3 {
+    /* Ponme el texto en mayusculas */
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #eee;
+}
+
+.sidebar-item .btn {
+    /* Esta propiedad va acompañada de .btn { display: block; y funciona gracias a ella */
+    margin-top: 10px;
+    margin: 0px auto;
+}
+
+.btn {
+    display: block;
+    background: black;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    /* Ponme el texto en mayusculas */
+    text-transform: uppercase;
+    font-size: 13px;
+    text-decoration: none;
+    max-width: 120px;
+    /* Esto esta relacionado con .btn-success y .btn-success:hover */
+    transition: 300ms all;
+    /* Quitale los bordes al boton Biscar */
+    border: none;
+    /* Al pasar el raton por Buscar se convierta en una mano señalando */
+    cursor: pointer;
+}
+
+.btn-success {
+    background: rgb(23, 150, 19);
+}
+
+.btn-success:hover {
+    background: black;
+}
+
+.mid-form label {
+    /* Nombre Apellidos Biografia ponmelos a la izquierda respecto a los inputs */
+    display: block;
+    float: left;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    min-height: 30px;
+    border: 1px, solid #ccc;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    box-shadow: 0 px 0px 5px #ccc inset;
+}
+
+textarea {
+    /*  El campo Biografia  */
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+    min-width: 100%;
+    height: 150px;
+    min-height: 150px;
+}
+
+.radiobuttons {
+    margin-top: 10px;
+    /*  Pon a la izquierda Hombre Mujer y Otro */
+    float: left;
+    margin-bottom: 10px;
+}
+
+.mid-form {
+    width: 50%;
+    /* Centrame el formulario al medio */
+    margin: 0px auto;
+}
+
+.subheader {
+    font-size: 38px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* -------------------------------ARTICULOS----------------------------------- */
+
+.article-item {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.article-item .image-wrap {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+}
+
+.article-item .image-wrap img {
+    height: 100%;
+    text-align: center;
+}
+
+.article-item h2 {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 7px;
+}
+
+.article-item .date {
+    display: block;
+    width: 100%;
+    color: rgb(122, 122, 122);
+}
+
+.article-item a {
+    display: block;
+    color: #444;
+    /* Quitale la linea de subrayado de los links */
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.article-item a:hover {
+    /* Al pasar con raton por encima subraya como un link "Leer mas" */
+    text-decoration: underline;
+}
+
+/* -------------------------------ARTICULOS----------------------------------- */
+
+/* -------------------------------VISTA DETALLE ARTICULOS--------------------- */
+.article-detail .image-wrap {
+    /* Deja de flotar la imagen para que se quede por encima del texto */
+    float: none;
+    width: 100%;
+    height: 300px;
+}
+
+.article-detail .image-wrap img {
+    width: 100%;
+    height: auto;
+}
+
+.article-detail .subheader {
+    margin-bottom: 0px;
+    margin-top: 15px;
+    border: none;
+}
+
+
+/* -------------------------------VISTA DETALLE ARTICULOS--------------------- */
+
+/* ---------------------------------FOOTER------------------------------------ */
+#footer {
+    background: #f7f7f7;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    color: #444;
+}
+
+#footer p {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* -------------------------------FOOTER----------------------------------- */
+
+/* -------------------------------VISTA BLOG------------------------------- */
+
+#slider.slider-small {
+    height: 150px;
+
+}
+
+#slider.slider-small h1 {
+    margin-top: 0.2px;
+    padding: 0px;
+    padding-top: 53px;
+
+}
+
+/* -------------------------------VISTA BLOG------------------------------- */
+
+/* -------------------------------RESPONSIVE------------------------------- */
+@media(max-width: 1488px) {
+    .center {
+        width: 85%;
+    }
+}
+
+@media(max-width: 1314px) {
+    .center {
+        width: 95%;
+    }
+
+    /* Adapta los elementos del menu automaticamente en 1314px y menos */
+    #menu ul {
+        width: auto;
+    }
+}
+
+@media(max-width: 959px) {
+    #logo {
+        font-size: 25px;
+    }
+
+    #brand {
+        margin-top: 7px;
+    }
+}
+
+@media(max-width: 838px) {
+    #logo {
+        font-size: 23px;
+    }
+
+    #brand {
+        margin-top: 7px;
+    }
+}
+
+@media(max-width: 811px) {
+
+    /* Mueveme el logo Curso react al centro arriba */
+    #logo {
+        float: none;
+        width: 240px;
+        margin: 0px auto;
+        margin-top: 20px;
+    }
+
+    #menu,
+    #menu ul {
+        /* Limpiame los flotados */
+        clear: both;
+        float: none;
+        /* Centrara los elementos del menu */
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        /* Reduceme la altura de las letras */
+        line-height: 43px;
+    }
+
+    #content {
+        /* Que los articulos ocupen todo el ancho y el id="sidebar" se vaya abajo */
+        float: none;
+        width: 100%;
+    }
+
+    #sidebar {
+        float: none;
+        width: 60%;
+        margin-bottom: 50px;
+        /* Ponme el sidebar en medio */
+        margin: 0px auto;
+
+    }
+
+    #slider h1 {
+        padding-top: 115px;
+        font-size: 25px;
+    }
+
+    /* Hazme los inputs del formulario mas largos */
+    .mid-form {
+        width: 70%;
+    }
+}
+
+@media(max-width: 448px) {
+    #header {
+        min-height: 130px;
+        /* Si algun item de la navbar no encaja en la resolucion que se esconda */
+        overflow: hidden;
+    }
+
+    #menu,
+    #menu ul {
+        line-height: 50px;
+    }
+
+    #menu ul li {
+        margin-right: 7px;
+        margin-left: 7px;
+    }
+
+    #slider {
+        height: 180px;
+    }
+
+    #slider h1 {
+        font-size: 19px;
+        padding-top: 30px;
+    }
+
+    #slider .btn-white {
+        margin-top: 20px;
+    }
+
+    #slider.slider-small {
+        height: 100px;
+    }
+
+    /* Hazme mas pequeño el slider azul en la vista Blog */
+    #slider.slider-small h1 {
+        padding-top: 35px;
+    }
+}
+
+/* -------------------------------RESPONSIVE------------------------------- */
